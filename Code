@@ -1,0 +1,30 @@
+import sys
+money = float(input("Welcome to Hamood Shop for Shopping!!!!!!!!!!!, Please insert the amount of money you have: "))
+if (money <= 0):
+    print ("Not enough money to buy, Gurl byeeeeeeeeeeeee you cheap hoe")
+    sys.exit()
+while (money > 0):
+    x = str(input("Pick which item do you want to buy: (c) Coffee, (h) Ham, (j) Juice: \t"))
+    if x == "c":
+       print ("Here is your Capacuiino! This will cost you 5 AED")
+       money = money - 5
+       print (money)
+    elif x == "h":
+       print ("Here is your Ham! This will cost you 5 AED")
+       money = money - 5
+       print (money)
+    elif x == "j":
+      print ("Here is your Juice! This will cost you 5 AED")
+      money = money - 5
+      print (money)
+    elif x != "h" or "j" or "c":
+        print ("Sweetie follow the commands or get out of my shop")
+        sys.exit()
+    g = str(input("Do you still want anything? (yes) or (no)\t"))
+    if g != "yes":
+        print ("Thank you for shopping at Hamood Shop for Shopping!!!!!!!!!!!")
+        sys.exit()
+     
+if (money <= 0):
+    print ("Not enough money to buy, Gurl byeeeeeeeeeeeee you cheap hoe")
+    sys.exit()
