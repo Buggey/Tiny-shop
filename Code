@@ -1,30 +1,37 @@
 import sys
-money = float(input("Welcome to Hamood Shop for Shopping!!!!!!!!!!!, Please insert the amount of money you have: "))
+money = float(input("Welcome to Hamood\'s Shop for Shopping!!!!!!!!!!!!!!, Please insert the amount of money you have: "))
 if (money <= 0):
-    print ("Not enough money to buy, Gurl byeeeeeeeeeeeee you cheap hoe")
+    print ("Not enough money to buy,Thank you for shopping at Hamood\'s Shop for Shopping!!!!!!!!!!!!!!")
     sys.exit()
+Shopping_cart = []
 while (money > 0):
-    x = str(input("Pick which item do you want to buy: (c) Coffee, (h) Ham, (j) Juice: \t"))
-    if x == "c":
-       print ("Here is your Capacuiino! This will cost you 5 AED")
-       money = money - 5
-       print (money)
-    elif x == "h":
-       print ("Here is your Ham! This will cost you 5 AED")
-       money = money - 5
-       print (money)
-    elif x == "j":
-      print ("Here is your Juice! This will cost you 5 AED")
-      money = money - 5
-      print (money)
-    elif x != "h" or "j" or "c":
-        print ("Sweetie follow the commands or get out of my shop")
+    x = str(input("Pick which item do you want to buy from this menu: (l) laptop [Costs 1200 AED], (m) mobile [Costs 800 AED], (j) Juice [Costs 4 AED]: "))
+    if x == "l" and (money >= 1200):
+       print ("Here is your laptop! This will cost you 1200 AED")
+       money = money - 1200
+       Shopping_cart.append("Laptop")
+       print ("The current amount of money you have now is:", money)
+    elif x == "m" and (money >= 800):
+       print ("Here is your Mobile! This will cost you 800 AED")
+       money = money - 800
+       Shopping_cart.append("Mobile")
+       print ("The current amount of money you have now is:", money)
+    elif x == "j" and (money >= 4):
+      print ("Here is your Juice! This will cost you 4 AED")
+      money = money - 4
+      Shopping_cart.append("Juice")
+      print ("The current amount of money you have now is:", money)
+    elif (x == "l" and money < 1200) or (x == "m" and money < 800) or (x == "j" and money < 4):
+        print ("Not enough money to buy this item")
+    elif x != "m" or "l" or "j":
+        print ("Sorry, that item is not available in our menu.")
         sys.exit()
-    g = str(input("Do you still want anything? (yes) or (no)\t"))
-    if g != "yes":
-        print ("Thank you for shopping at Hamood Shop for Shopping!!!!!!!!!!!")
+    g = str(input("Do you still want to buy anything? (yes) or (no): "))
+    if g not in ("yes", "y"):
+        print ()
+        print ("Thank you for shopping at Hamood\'s Shop for Shopping!!!!!!!!!!!!!!, This is the list of what you bought:",Shopping_cart)
         sys.exit()
      
 if (money <= 0):
-    print ("Not enough money to buy, Gurl byeeeeeeeeeeeee you cheap hoe")
+    print ("Not enough money to buy, Thank you for shopping at Hamood\'s Shop for Shopping!!!!!!!!!!!!!!")
     sys.exit()
